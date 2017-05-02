@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>题目</h1>
+		<p title="shuxing">内容</p>
+		<ul id="name">
+			<li>1</li>
+			<li class="lia">2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<!--
+        	getElementByClassName是H5中新增加的一个方法，一些老版本的浏览器可能不支持
+        	下面是用已有的DOM方法来实现getElementByClassName
+        	这个例子不适用于多个className的情况
+        -->
+        <script type="text/javascript">
+        	function getElementClassName(node, classname){
+        		if(node.getElementClassName){
+        			return node.getElementClassName(classname);
+        		}else{
+        			var results = new Array();
+        			var elems = node.getElementsByTagName("*");
+        			for(var i = 0; i<elems.length; i++){
+        				if(elems[1].className.indexOf(classname) != -1){
+    						results[results.length] = elems[i];
+        				}
+        			}
+        			return results;
+        		}
+        	}
+        	var num = document.getElementById("name");
+        	var sales = getElementClassName(name, "lia");
+        	alert(typeof sales);
+        </script>
+	</body>
+</html>

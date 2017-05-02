@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<h1>题目</h1>
+		<p title="shuxing">内容</p>
+		<ul id="name">
+			<li>1</li>
+			<li class="lia">2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script type="text/javascript">
+			var num = document.getElementById("name");
+			var items = num.getElementsByTagName("*");
+			for(var i = 0; i<items.length; i++)
+			{
+				alert(typeof items[i]);
+			}
+		</script>
+	</body>
+</html>
